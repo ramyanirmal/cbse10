@@ -6,12 +6,12 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs, query, orderBy, limit, doc, setDoc, getDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSy...",            // ← your values from Firebase
+  authDomain: "mockmaster-cbse10.firebaseapp.com",
+  projectId: "mockmaster-cbse10",
+  storageBucket: "mockmaster-cbse10.appspot.com",
+  messagingSenderId: "123456789",
+  appId: "1:123456789:web:abc123"
 };
 
 const app = initializeApp(firebaseConfig);
