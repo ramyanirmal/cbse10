@@ -69,7 +69,7 @@ export default function HistoryScreen({ profile, onBack }) {
               const pct = r.pct;
               const passed = r.passed;
               return (
-                <div key={i} style={styles.historyCard} className="animate-slide-up" style={{ ...styles.historyCard, animationDelay: `${i*40}ms` }}>
+                <div key={i} className="animate-slide-up" style={{ ...styles.historyCard, animationDelay: `${i*40}ms` }}>
                   <div style={styles.cardTop}>
                     {s && (
                       <span style={{

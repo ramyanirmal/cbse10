@@ -1,42 +1,47 @@
 // src/lib/firebase.js
-// ⚠️  REPLACE with your own Firebase project config
-// Firebase Console → Project Settings → Your Apps → Web App → Config
+// Persistence layer — uses Supabase instead of Firebase Firestore.
+// Exports the same API so the rest of the app is unchanged.
 
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, getDocs, query, orderBy, limit, doc, setDoc, getDoc } from 'firebase/firestore';
+import { createClient } from '@supabase/supabase-js';
 
-const firebaseConfig = {
-  apiKey: "AIzaSy...",            // ← your values from Firebase
-  authDomain: "mockmaster-cbse10.firebaseapp.com",
-  projectId: "mockmaster-cbse10",
-  storageBucket: "mockmaster-cbse10.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "1:123456789:web:abc123"
-};
-
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-
-// ── Firestore helpers ──────────────────────────────────────
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+);
 
 // Save a completed test result
 export async function saveTestResult(result) {
   try {
-    await addDoc(collection(db, 'testResults'), {
-      ...result,
-      timestamp: new Date().toISOString()
+    const { error } = await supabase.from('test_results').insert({
+      subject: result.subject,
+      subject_name: result.subjectName,
+      chapter: result.chapter ?? null,
+      score: result.score,
+      total: result.total,
+      marks: result.marks,
+      max_marks: result.maxMarks,
+      pct: result.pct,
+      passed: result.passed,
+      time_secs: result.timeSecs,
+      difficulty: result.difficulty ?? null,
+      xp_earned: result.xpEarned,
     });
+    if (error) console.error('saveTestResult failed:', error);
   } catch (e) {
     console.error('saveTestResult failed:', e);
   }
 }
 
-// Get all test results (for history + stats)
+// Get all test results ordered by newest first (for history + stats)
 export async function getTestHistory() {
   try {
-    const q = query(collection(db, 'testResults'), orderBy('timestamp', 'desc'), limit(100));
-    const snap = await getDocs(q);
-    return snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    const { data, error } = await supabase
+      .from('test_results')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .limit(100);
+    if (error) throw error;
+    return data ?? [];
   } catch (e) {
     console.error('getTestHistory failed:', e);
     return [];
@@ -46,7 +51,10 @@ export async function getTestHistory() {
 // Save / update player profile (XP, level, streaks, badges)
 export async function saveProfile(profile) {
   try {
-    await setDoc(doc(db, 'profile', 'player'), profile);
+    const { error } = await supabase
+      .from('player_profile')
+      .upsert({ id: 'player', data: profile, updated_at: new Date().toISOString() });
+    if (error) console.error('saveProfile failed:', error);
   } catch (e) {
     console.error('saveProfile failed:', e);
   }
@@ -55,8 +63,13 @@ export async function saveProfile(profile) {
 // Load player profile
 export async function loadProfile() {
   try {
-    const snap = await getDoc(doc(db, 'profile', 'player'));
-    return snap.exists() ? snap.data() : null;
+    const { data, error } = await supabase
+      .from('player_profile')
+      .select('data')
+      .eq('id', 'player')
+      .maybeSingle();
+    if (error) throw error;
+    return data?.data ?? null;
   } catch (e) {
     console.error('loadProfile failed:', e);
     return null;

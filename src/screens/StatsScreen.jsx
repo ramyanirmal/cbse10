@@ -146,7 +146,7 @@ export default function StatsScreen({ profile, currentLevel, levelPct, xpInLevel
               { icon: '🔥', num: profile.streak, label: 'Day Streak', color: '#f97316' },
               { icon: '🏅', num: earnedBadges.length, label: 'Badges', color: 'var(--purple-light)' },
             ].map((s, i) => (
-              <div key={i} style={styles.statCard} className="animate-slide-up" style={{ ...styles.statCard, animationDelay: `${i*60}ms` }}>
+              <div key={i} className="animate-slide-up" style={{ ...styles.statCard, animationDelay: `${i*60}ms` }}>
                 <span style={styles.statIcon}>{s.icon}</span>
                 <div>
                   <div style={{ ...styles.statNum, color: s.color || 'var(--heading)' }}>{s.num}</div>
