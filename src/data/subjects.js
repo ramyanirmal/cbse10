@@ -1,0 +1,203 @@
+// src/data/subjects.js
+
+export const SUBJECTS = [
+  {
+    id: 'maths',
+    name: 'Mathematics',
+    emoji: '📐',
+    color: '#3b82f6',
+    gradient: 'linear-gradient(135deg, #1d4ed8, #3b82f6)',
+    lightBg: '#eff6ff',
+    darkBg: '#1e3a5f',
+    chapters: [
+      { id: 1, name: 'Real Numbers', weightage: 6 },
+      { id: 2, name: 'Polynomials', weightage: 8 },
+      { id: 3, name: 'Pair of Linear Equations', weightage: 10 },
+      { id: 4, name: 'Quadratic Equations', weightage: 10 },
+      { id: 5, name: 'Arithmetic Progressions', weightage: 8 },
+      { id: 6, name: 'Triangles', weightage: 10 },
+      { id: 7, name: 'Coordinate Geometry', weightage: 6 },
+      { id: 8, name: 'Introduction to Trigonometry', weightage: 8 },
+      { id: 9, name: 'Applications of Trigonometry', weightage: 6 },
+      { id: 10, name: 'Circles', weightage: 8 },
+      { id: 11, name: 'Areas Related to Circles', weightage: 6 },
+      { id: 12, name: 'Surface Areas and Volumes', weightage: 10 },
+      { id: 13, name: 'Statistics', weightage: 8 },
+      { id: 14, name: 'Probability', weightage: 6 },
+    ]
+  },
+  {
+    id: 'science',
+    name: 'Science',
+    emoji: '🔬',
+    color: '#10b981',
+    gradient: 'linear-gradient(135deg, #047857, #10b981)',
+    lightBg: '#ecfdf5',
+    darkBg: '#064e3b',
+    chapters: [
+      { id: 1, name: 'Chemical Reactions & Equations', sub: 'Chemistry', weightage: 7 },
+      { id: 2, name: 'Acids, Bases and Salts', sub: 'Chemistry', weightage: 7 },
+      { id: 3, name: 'Metals and Non-metals', sub: 'Chemistry', weightage: 6 },
+      { id: 4, name: 'Carbon and its Compounds', sub: 'Chemistry', weightage: 5 },
+      { id: 5, name: 'Life Processes', sub: 'Biology', weightage: 8 },
+      { id: 6, name: 'Control and Coordination', sub: 'Biology', weightage: 7 },
+      { id: 7, name: 'How do Organisms Reproduce?', sub: 'Biology', weightage: 7 },
+      { id: 8, name: 'Heredity', sub: 'Biology', weightage: 6 },
+      { id: 9, name: 'Light — Reflection & Refraction', sub: 'Physics', weightage: 7 },
+      { id: 10, name: 'The Human Eye & Colourful World', sub: 'Physics', weightage: 5 },
+      { id: 11, name: 'Electricity', sub: 'Physics', weightage: 7 },
+      { id: 12, name: 'Magnetic Effects of Electric Current', sub: 'Physics', weightage: 6 },
+      { id: 13, name: 'Our Environment', sub: 'Biology', weightage: 4 },
+    ]
+  },
+  {
+    id: 'sst',
+    name: 'Social Science',
+    emoji: '🌍',
+    color: '#f59e0b',
+    gradient: 'linear-gradient(135deg, #b45309, #f59e0b)',
+    lightBg: '#fffbeb',
+    darkBg: '#451a03',
+    chapters: [
+      { id: 1, name: 'Rise of Nationalism in Europe', sub: 'History' },
+      { id: 2, name: 'Nationalism in India', sub: 'History' },
+      { id: 3, name: 'The Making of a Global World', sub: 'History' },
+      { id: 4, name: 'The Age of Industrialisation', sub: 'History' },
+      { id: 5, name: 'Print Culture and the Modern World', sub: 'History' },
+      { id: 6, name: 'Resources and Development', sub: 'Geography' },
+      { id: 7, name: 'Forest and Wildlife Resources', sub: 'Geography' },
+      { id: 8, name: 'Water Resources', sub: 'Geography' },
+      { id: 9, name: 'Agriculture', sub: 'Geography' },
+      { id: 10, name: 'Minerals and Energy Resources', sub: 'Geography' },
+      { id: 11, name: 'Manufacturing Industries', sub: 'Geography' },
+      { id: 12, name: 'Lifelines of National Economy', sub: 'Geography' },
+      { id: 13, name: 'Power Sharing', sub: 'Civics' },
+      { id: 14, name: 'Federalism', sub: 'Civics' },
+      { id: 15, name: 'Gender, Religion and Caste', sub: 'Civics' },
+      { id: 16, name: 'Political Parties', sub: 'Civics' },
+      { id: 17, name: 'Outcomes of Democracy', sub: 'Civics' },
+      { id: 18, name: 'Development', sub: 'Economics' },
+      { id: 19, name: 'Sectors of the Indian Economy', sub: 'Economics' },
+      { id: 20, name: 'Money and Credit', sub: 'Economics' },
+      { id: 21, name: 'Globalisation and the Indian Economy', sub: 'Economics' },
+      { id: 22, name: 'Consumer Rights', sub: 'Economics' },
+    ]
+  },
+  {
+    id: 'english',
+    name: 'English',
+    emoji: '📝',
+    color: '#8b5cf6',
+    gradient: 'linear-gradient(135deg, #6d28d9, #8b5cf6)',
+    lightBg: '#f5f3ff',
+    darkBg: '#2e1065',
+    chapters: [
+      { id: 1, name: 'A Letter to God', sub: 'First Flight' },
+      { id: 2, name: 'Nelson Mandela: Long Walk to Freedom', sub: 'First Flight' },
+      { id: 3, name: 'Two Stories about Flying', sub: 'First Flight' },
+      { id: 4, name: 'From the Diary of Anne Frank', sub: 'First Flight' },
+      { id: 5, name: 'The Hundred Dresses I & II', sub: 'First Flight' },
+      { id: 6, name: 'Glimpses of India', sub: 'First Flight' },
+      { id: 7, name: 'Mijbil the Otter', sub: 'First Flight' },
+      { id: 8, name: 'Madam Rides the Bus', sub: 'First Flight' },
+      { id: 9, name: 'The Sermon at Benares', sub: 'First Flight' },
+      { id: 10, name: 'The Proposal', sub: 'First Flight' },
+      { id: 11, name: 'A Triumph of Surgery', sub: 'Footprints' },
+      { id: 12, name: "The Thief's Story", sub: 'Footprints' },
+      { id: 13, name: 'The Midnight Visitor', sub: 'Footprints' },
+      { id: 14, name: 'A Question of Trust', sub: 'Footprints' },
+      { id: 15, name: 'Footprints Without Feet', sub: 'Footprints' },
+      { id: 16, name: 'The Making of a Scientist', sub: 'Footprints' },
+      { id: 17, name: 'The Necklace', sub: 'Footprints' },
+      { id: 18, name: 'Bholi', sub: 'Footprints' },
+      { id: 19, name: 'The Book That Saved the Earth', sub: 'Footprints' },
+      { id: 20, name: 'Grammar & Writing Skills', sub: 'Grammar' },
+    ]
+  },
+  {
+    id: 'hindi',
+    name: 'Hindi',
+    emoji: '🪔',
+    color: '#f97316',
+    gradient: 'linear-gradient(135deg, #c2410c, #f97316)',
+    lightBg: '#fff7ed',
+    darkBg: '#431407',
+    chapters: [
+      { id: 1, name: 'सूरदास के पद', sub: 'Kshitij' },
+      { id: 2, name: 'राम-लक्ष्मण-परशुराम संवाद', sub: 'Kshitij' },
+      { id: 3, name: 'सवैया और कवित्त', sub: 'Kshitij' },
+      { id: 4, name: 'आत्मकथ्य', sub: 'Kshitij' },
+      { id: 5, name: 'उत्साह और अट नहीं रही', sub: 'Kshitij' },
+      { id: 6, name: 'यह दंतुरहित मुस्कान / फसल', sub: 'Kshitij' },
+      { id: 7, name: 'छाया मत छूना', sub: 'Kshitij' },
+      { id: 8, name: 'कन्यादान', sub: 'Kshitij' },
+      { id: 9, name: 'संगतकार', sub: 'Kshitij' },
+      { id: 10, name: 'नेताजी का चश्मा', sub: 'Kshitij Gadya' },
+      { id: 11, name: 'बालगोबिन भगत', sub: 'Kshitij Gadya' },
+      { id: 12, name: 'लखनवी अंदाज़', sub: 'Kshitij Gadya' },
+      { id: 13, name: 'मानवीय करुणा की दिव्य चमक', sub: 'Kshitij Gadya' },
+      { id: 14, name: 'एक कहानी यह भी', sub: 'Kshitij Gadya' },
+      { id: 15, name: 'स्त्री शिक्षा के विरोधी कुतर्कों का खंडन', sub: 'Kshitij Gadya' },
+      { id: 16, name: 'नौबतखाने में इबादत', sub: 'Kshitij Gadya' },
+      { id: 17, name: 'संस्कृति', sub: 'Kshitij Gadya' },
+      { id: 18, name: 'माता का आँचल', sub: 'Kritika' },
+      { id: 19, name: 'जॉर्ज पंचम की नाक', sub: 'Kritika' },
+      { id: 20, name: 'व्याकरण एवं लेखन', sub: 'Grammar' },
+    ]
+  },
+  {
+    id: 'ai',
+    name: 'Artificial Intelligence',
+    emoji: '🤖',
+    color: '#06b6d4',
+    gradient: 'linear-gradient(135deg, #0e7490, #06b6d4)',
+    lightBg: '#ecfeff',
+    darkBg: '#083344',
+    chapters: [
+      { id: 1, name: 'Introduction to Artificial Intelligence', sub: 'Unit 1' },
+      { id: 2, name: 'AI Project Cycle', sub: 'Unit 1' },
+      { id: 3, name: 'Data Acquisition and Exploration', sub: 'Unit 2' },
+      { id: 4, name: 'Data Analysis and Visualization', sub: 'Unit 2' },
+      { id: 5, name: 'Machine Learning Basics', sub: 'Unit 3' },
+      { id: 6, name: 'Supervised & Unsupervised Learning', sub: 'Unit 3' },
+      { id: 7, name: 'Neural Networks & Deep Learning', sub: 'Unit 4' },
+      { id: 8, name: 'Natural Language Processing', sub: 'Unit 4' },
+      { id: 9, name: 'Computer Vision', sub: 'Unit 4' },
+      { id: 10, name: 'AI Ethics, Bias & Societal Impact', sub: 'Unit 5' },
+      { id: 11, name: 'AI Applications in Real World', sub: 'Unit 5' },
+    ]
+  }
+];
+
+// Gamification config
+export const PASS_THRESHOLD = 40; // CBSE pass = 33%, but we set 40% for practice
+export const XP_PER_CORRECT = 10;
+export const XP_PER_PASS = 50;
+export const XP_STREAK_BONUS = 25;
+
+export const BADGES = [
+  { id: 'first_test', emoji: '🎯', name: 'First Step', desc: 'Completed your first test', condition: (stats) => stats.totalTests >= 1 },
+  { id: 'pass_5', emoji: '⭐', name: 'Rising Star', desc: 'Passed 5 tests', condition: (stats) => stats.totalPassed >= 5 },
+  { id: 'pass_10', emoji: '🌟', name: 'Star Student', desc: 'Passed 10 tests', condition: (stats) => stats.totalPassed >= 10 },
+  { id: 'streak_3', emoji: '🔥', name: 'On Fire!', desc: '3-day study streak', condition: (stats) => stats.streak >= 3 },
+  { id: 'streak_7', emoji: '💫', name: 'Study Warrior', desc: '7-day streak', condition: (stats) => stats.streak >= 7 },
+  { id: 'perfect', emoji: '💎', name: 'Perfect Score', desc: 'Got 100% in a test', condition: (stats) => stats.hasPerfect },
+  { id: 'xp_500', emoji: '🚀', name: 'XP Hunter', desc: 'Earned 500 XP', condition: (stats) => stats.totalXP >= 500 },
+  { id: 'xp_1000', emoji: '👑', name: 'Board Queen', desc: 'Earned 1000 XP', condition: (stats) => stats.totalXP >= 1000 },
+  { id: 'all_subjects', emoji: '🌈', name: 'All-Rounder', desc: 'Attempted all 6 subjects', condition: (stats) => stats.subjectsTried >= 6 },
+  { id: 'maths_pass', emoji: '📐', name: 'Maths Whiz', desc: 'Passed a Maths test', condition: (stats) => stats.passedSubjects?.includes('maths') },
+  { id: 'science_pass', emoji: '🔬', name: 'Science Star', desc: 'Passed a Science test', condition: (stats) => stats.passedSubjects?.includes('science') },
+  { id: 'speed_demon', emoji: '⚡', name: 'Speed Demon', desc: 'Finished a test in under 3 mins', condition: (stats) => stats.hasFastFinish },
+];
+
+export const LEVELS = [
+  { level: 1, name: 'Newbie', minXP: 0, maxXP: 100, emoji: '🌱' },
+  { level: 2, name: 'Learner', minXP: 100, maxXP: 250, emoji: '📖' },
+  { level: 3, name: 'Scholar', minXP: 250, maxXP: 500, emoji: '🎓' },
+  { level: 4, name: 'Topper', minXP: 500, maxXP: 1000, emoji: '⭐' },
+  { level: 5, name: 'Board Queen', minXP: 1000, maxXP: 99999, emoji: '👑' },
+];
+
+export function getLevelForXP(xp) {
+  return LEVELS.slice().reverse().find(l => xp >= l.minXP) || LEVELS[0];
+}
