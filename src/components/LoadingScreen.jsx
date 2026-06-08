@@ -2,10 +2,9 @@
 import React, { useEffect, useState } from 'react';
 
 const MESSAGES = [
-  'Crafting CBSE-pattern questions ✨',
-  'Making it tricky (but fair) 😄',
-  'Adding case study passages 📄',
-  'Calibrating difficulty 🎯',
+  'Picking your questions 📋',
+  'Shuffling the question bank 🔀',
+  'Preparing case study passages 📄',
   'Almost ready! 🚀',
 ];
 

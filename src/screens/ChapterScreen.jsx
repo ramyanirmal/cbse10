@@ -137,11 +137,10 @@ const styles = {
 
 export default function ChapterScreen({ subject, onBack, onStartTest }) {
   const [qCount, setQCount] = useState('10');
-  const [difficulty, setDifficulty] = useState('mixed');
   const [selectedChapter, setSelectedChapter] = useState(null);
 
   const handleStart = (chapter = null) => {
-    onStartTest({ subject, chapter: chapter || selectedChapter, qCount: parseInt(qCount), difficulty });
+    onStartTest({ subject, chapter: chapter || selectedChapter, qCount: parseInt(qCount) });
   };
 
   const btnLabel = selectedChapter
@@ -174,19 +173,6 @@ export default function ChapterScreen({ subject, onBack, onStartTest }) {
                 <option value="10">10 — Standard</option>
                 <option value="15">15 — Detailed</option>
                 <option value="20">20 — Full</option>
-              </select>
-            </div>
-            <div style={styles.configItem}>
-              <div style={styles.configLabel}>Difficulty</div>
-              <select
-                style={styles.select}
-                value={difficulty}
-                onChange={e => setDifficulty(e.target.value)}
-              >
-                <option value="easy">Easy 😊</option>
-                <option value="mixed">Mixed 🎯</option>
-                <option value="medium">Medium 📚</option>
-                <option value="hard">Hard 🔥</option>
               </select>
             </div>
           </div>

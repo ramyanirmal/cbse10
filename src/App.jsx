@@ -39,17 +39,17 @@ export default function App() {
     setScreen(SCREEN.CHAPTERS);
   }, []);
 
-  const handleStartTest = useCallback(async ({ subject, chapter, qCount, difficulty }) => {
+  const handleStartTest = useCallback(async ({ subject, chapter, qCount }) => {
     setSelectedSubject(subject);
     setSelectedChapter(chapter || null);
-    setTestConfig({ qCount, difficulty });
+    setTestConfig({ qCount });
     setScreen(SCREEN.LOADING);
 
     try {
-      const qs = await generateQuestions({ subject, chapter, count: qCount, difficulty });
+      const qs = await generateQuestions({ subject, chapter, count: qCount });
       setQuestions(qs);
     } catch (e) {
-      console.error('AI generation failed:', e);
+      console.error('Question generation failed:', e);
       setQuestions(getFallbackQuestions(subject.name));
     }
 
@@ -66,7 +66,6 @@ export default function App() {
 
     const { xpEarned, passed, pct } = await recordResult(fullResult);
 
-    // Save to Firebase
     await saveTestResult({
       subject: selectedSubject.id,
       subjectName: selectedSubject.name,
@@ -78,7 +77,6 @@ export default function App() {
       pct,
       passed,
       timeSecs: result.timeSecs,
-      difficulty: testConfig.difficulty,
       xpEarned,
     });
 
@@ -94,7 +92,6 @@ export default function App() {
         subject: selectedSubject,
         chapter: selectedChapter,
         count: testConfig.qCount,
-        difficulty: testConfig.difficulty
       });
       setQuestions(qs);
     } catch (e) {
